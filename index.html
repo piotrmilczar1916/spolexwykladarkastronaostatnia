@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wykładarka worków – maszyna do wykładania worków do kartonów | Pattyn</title>
+  <meta name="description" content="Wykładarka worków Pattyn: maszyna do formowania worków i wkładania do kartonu — worek na wymiar z rolki folii PE (bag-in-box, MTM). Automatyczne wykładanie worków do kartonów i skrzynek. Integracja linii i serwis w Polsce.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b1620">
+  <!-- TODO: kanibalizacja – spolex.com/pl/wykladarki-workow/ powinna linkować na wykładarka.pl lub mieć canonical tutaj -->
+  <link rel="canonical" href="https://wykładarka.pl/">
+  <link rel="preload" as="image" href="assets/hero-maszyna.webp" fetchpriority="high">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Wykładarka worków – maszyna do wykładania worków | Pattyn">
+  <meta property="og:description" content="Maszyna do formowania i wkładania worków do kartonu — worek na wymiar z rolki folii. Wykładarka worków Pattyn (bagmaker inserter) w linii bag-in-box. Integracja i serwis w Polsce.">
+  <meta property="og:url" content="https://wykładarka.pl/">
+  <!-- TODO: og:image – podmień po dodaniu grafiki 1200×630 px (og-image.jpg) -->
+  <meta property="og:image" content="https://wykładarka.pl/assets/hero-maszyna.webp">
+  <meta property="og:site_name" content="Wykładarka worków">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wykładarka worków – maszyna do wykładania worków | Pattyn">
+  <meta name="twitter:description" content="Wykładarka worków Pattyn — maszyna formująca worek z rolki i wkładająca go do kartonu. Worek na wymiar, bag-in-box, integracja linii w Polsce.">
+  <meta name="twitter:image" content="https://wykładarka.pl/assets/hero-maszyna.webp">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            steel: { 50: '#f6f8fa', 100: '#eef1f5', 200: '#dce2ea', 300: '#bcc7d4', 400: '#92a1b3', 500: '#6c7d92', 600: '#536273', 700: '#404d5c', 800: '#2c3742', 900: '#1d262f', 950: '#121922' },
+            navy: { 700: '#16242f', 800: '#101c26', 900: '#0b1620', 950: '#070f16' },
+            accent: { 300: '#4d9fd4', 400: '#2d85c0', 500: '#005795', 600: '#004a7a', 700: '#003d66', 800: '#003052' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'sans-serif'],
+            display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 1px 2px rgba(16,28,38,.04), 0 8px 24px -12px rgba(16,28,38,.18)',
+            'card-hover': '0 1px 2px rgba(16,28,38,.06), 0 24px 48px -20px rgba(16,28,38,.30)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* TODO: podmień --accent na dokładny hex z identyfikacji wizualnej (obecnie: #005795) */
+      --accent: #005795;
+      --accent-light: #2d85c0;
+      --accent-lighter: #4d9fd4;
+      --accent-dark: #004a7a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-feature-settings: "ss01","cv01","cv02"; }
+    [id] { scroll-margin-top: 5.5rem; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .reveal-stagger, .hero-item, .hero-visual-wrap,
+      .compare-row, .hero-parallax-layer { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+      #porownanie .compare-row { opacity: 1 !important; transform: none !important; }
+      .counter.is-done { color: var(--accent-lighter) !important; }
+      #process-diagram[data-reduced="true"] .proc-roll-body { transform: rotate(-125deg) !important; animation: none !important; }
+      #process-diagram[data-reduced="true"] .proc-film-sheet { transform: scaleY(1) !important; opacity: .85; animation: none !important; }
+      #process-diagram[data-reduced="true"] .proc-bag-unit { opacity: 1 !important; transform: translate(138px, 43px) !important; animation: none !important; }
+      #process-diagram[data-reduced="true"] .proc-cuff-left { transform: rotate(-42deg) !important; animation: none !important; }
+      #process-diagram[data-reduced="true"] .proc-cuff-right { transform: rotate(42deg) !important; animation: none !important; }
+      #process-diagram[data-reduced="true"] .proc-stage-text-5 { opacity: 1 !important; animation: none !important; }
+      .process-step, .process-step-num { transform: none !important; transition: none !important; }
+      #zastosowania .reveal-stagger > span:first-of-type { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+    .reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .header-scrolled { box-shadow: 0 1px 0 rgba(220,226,234,.9), 0 8px 30px -12px rgba(16,28,38,.18); }
+    #header-inner { transition: height .3s cubic-bezier(.16,1,.3,1), padding .3s cubic-bezier(.16,1,.3,1); }
+    #site-header.header-compact #header-inner { height: 3.5rem; }
+    @media (min-width: 1024px) {
+      #site-header.header-compact #header-inner { height: 3.75rem; }
+    }
+
+    /* Kaskada reveal w siatkach kart */
+    .reveal-stagger { opacity: 0; transform: translateY(1.25rem); transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); transition-delay: calc(var(--stagger-i, 0) * 90ms); }
+    .reveal-grid.is-visible .reveal-stagger { opacity: 1; transform: translateY(0); }
+
+    /* Ikony branż – bounce przy scroll reveal */
+    @keyframes industry-icon-bounce {
+      0% { transform: scale(0.4) translateY(6px); opacity: 0; }
+      55% { transform: scale(1.14) translateY(-5px); opacity: 1; }
+      75% { transform: scale(0.96) translateY(1px); }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    #zastosowania .reveal-stagger > span:first-of-type {
+      transform: scale(0.85);
+      opacity: 0;
+    }
+    #zastosowania .reveal-grid.is-visible .reveal-stagger > span:first-of-type {
+      animation: industry-icon-bounce 0.7s cubic-bezier(.34, 1.45, .64, 1) forwards;
+      animation-delay: calc(var(--stagger-i, 0) * 90ms + 0.28s);
+    }
+    /* Branże – karty widoczne od razu (bez pustego białego bloku przed reveal) */
+    #zastosowania .reveal-stagger {
+      opacity: 1;
+      transform: translateY(0.75rem);
+    }
+    #zastosowania .reveal-grid.is-visible .reveal-stagger {
+      transform: translateY(0);
+    }
+
+    /* Linia – bez pustego białego bloku przed reveal */
+    #linia .reveal {
+      opacity: 1;
+      transform: translateY(0.75rem);
+    }
+    #linia .reveal.is-visible {
+      transform: translateY(0);
+    }
+
+    /* Licznik – błysk po zakończeniu */
+    @keyframes counter-flash {
+      0% { color: #4d9fd4; transform: scale(1); }
+      40% { color: #fff; transform: scale(1.06); text-shadow: 0 0 24px rgba(77,159,212,.55); }
+      100% { color: #4d9fd4; transform: scale(1); text-shadow: none; }
+    }
+    .counter.is-done { animation: counter-flash .55s cubic-bezier(.16,1,.3,1) forwards; }
+
+    /* Hero – parallax tła (siatka + poświata) */
+    .hero-parallax-layer { will-change: transform; transition: transform .12s ease-out; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-parallax-layer { transform: none !important; }
+    }
+
+    /* Kroki procesu – Jak działa (cykl podświetlenia) */
+    .process-step { border-radius: .75rem; transition: background-color .45s ease, box-shadow .45s ease, transform .45s cubic-bezier(.16,1,.3,1); }
+    .process-step.is-active { background-color: rgba(0,87,149,.06); box-shadow: inset 3px 0 0 var(--accent); transform: translateX(4px); }
+    .process-step-num { transition: background-color .45s ease, transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s ease; }
+    .process-step.is-active .process-step-num { background: var(--accent); transform: scale(1.08); box-shadow: 0 4px 14px -4px rgba(0,87,149,.45); }
+    #process-steps.is-paused .process-step { cursor: pointer; }
+    .proc-diagram svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .proc-diagram.is-running .proc-roll-body { animation: proc-roll-unwind 11s ease-in-out infinite; transform-origin: 80px 58px; }
+    .proc-diagram.is-running .proc-film-sheet { animation: proc-film-unwind 11s ease-in-out infinite; transform-origin: 80px 96px; }
+    .proc-diagram.is-running .proc-sealer-top { animation: proc-sealer-top 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-sealer-bot { animation: proc-sealer-bot 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-cut-flash { animation: proc-cut-flash 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-bag-unit { animation: proc-bag-move 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-cuff-left { animation: proc-cuff-left 11s ease-in-out infinite; transform-origin: 106px 128px; }
+    .proc-diagram.is-running .proc-cuff-right { animation: proc-cuff-right 11s ease-in-out infinite; transform-origin: 130px 128px; }
+    .proc-stage-text { opacity: 0; font-family: 'Inter', system-ui, sans-serif; font-size: 11px; fill: #6c7d92; }
+    .proc-diagram.is-running .proc-stage-text-1 { animation: proc-text-1 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-stage-text-2 { animation: proc-text-2 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-stage-text-3 { animation: proc-text-3 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-stage-text-4 { animation: proc-text-4 11s ease-in-out infinite; }
+    .proc-diagram.is-running .proc-stage-text-5 { animation: proc-text-5 11s ease-in-out infinite; }
+    @keyframes proc-text-1 { 0%, 18% { opacity: 1; } 19%, 100% { opacity: 0; } }
+    @keyframes proc-text-2 { 0%, 18% { opacity: 0; } 19%, 38% { opacity: 1; } 39%, 100% { opacity: 0; } }
+    @keyframes proc-text-3 { 0%, 38% { opacity: 0; } 39%, 58% { opacity: 1; } 59%, 100% { opacity: 0; } }
+    @keyframes proc-text-4 { 0%, 58% { opacity: 0; } 59%, 78% { opacity: 1; } 79%, 100% { opacity: 0; } }
+    @keyframes proc-text-5 { 0%, 78% { opacity: 0; } 79%, 97% { opacity: 1; } 98%, 100% { opacity: 0; } }
+    @keyframes proc-roll-unwind {
+      0%, 6% { transform: rotate(0deg); }
+      24%, 100% { transform: rotate(-125deg); }
+    }
+    @keyframes proc-film-unwind {
+      0%, 6% { transform: scaleY(0); opacity: .35; }
+      8%, 24% { transform: scaleY(1); opacity: 1; }
+      26%, 100% { transform: scaleY(1); opacity: .85; }
+    }
+    @keyframes proc-sealer-top {
+      0%, 20% { transform: translateY(0); }
+      24%, 28% { transform: translateY(10px); }
+      32%, 100% { transform: translateY(0); }
+    }
+    @keyframes proc-sealer-bot {
+      0%, 20% { transform: translateY(0); }
+      24%, 28% { transform: translateY(-10px); }
+      32%, 100% { transform: translateY(0); }
+    }
+    @keyframes proc-cut-flash {
+      0%, 22% { opacity: 0; }
+      24% { opacity: 1; }
+      26%, 100% { opacity: 0; }
+    }
+    @keyframes proc-bag-move {
+      0%, 26% { opacity: 0; transform: translate(0, -10px) scale(.9); }
+      30%, 36% { opacity: 1; transform: translate(0, 0) scale(1); }
+      42%, 54% { opacity: 1; transform: translate(138px, 43px) scale(1); }
+      58%, 100% { opacity: 1; transform: translate(138px, 43px) scale(1); }
+    }
+    @keyframes proc-cuff-left {
+      0%, 58% { transform: rotate(0deg); }
+      68%, 92% { transform: rotate(-42deg); }
+      96%, 100% { transform: rotate(-42deg); }
+    }
+    @keyframes proc-cuff-right {
+      0%, 58% { transform: rotate(0deg); }
+      68%, 92% { transform: rotate(42deg); }
+      96%, 100% { transform: rotate(42deg); }
+    }
+    #process-diagram[data-reduced="true"] .proc-roll-body,
+    #process-diagram[data-reduced="true"] .proc-film-sheet,
+    #process-diagram[data-reduced="true"] .proc-sealer-top,
+    #process-diagram[data-reduced="true"] .proc-sealer-bot,
+    #process-diagram[data-reduced="true"] .proc-cut-flash,
+    #process-diagram[data-reduced="true"] .proc-bag-unit,
+    #process-diagram[data-reduced="true"] .proc-cuff-left,
+    #process-diagram[data-reduced="true"] .proc-cuff-right { animation: none !important; }
+    #process-diagram[data-reduced="true"] .proc-roll-body { transform: rotate(-125deg); }
+    #process-diagram[data-reduced="true"] .proc-film-sheet { transform: scaleY(1); opacity: .85; }
+    #process-diagram[data-reduced="true"] .proc-bag-unit { opacity: 1; transform: translate(138px, 43px) scale(1); }
+    #process-diagram[data-reduced="true"] .proc-cuff-left { transform: rotate(-38deg); }
+    #process-diagram[data-reduced="true"] .proc-cuff-right { transform: rotate(38deg); }
+
+    /* Tabela porównania */
+    .compare-row { opacity: 0; transform: translateY(.75rem); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1); transition-delay: calc(var(--row-i, 0) * 70ms); }
+    #porownanie.compare-ready .compare-row { opacity: 1; transform: translateY(0); }
+    @keyframes compare-col-glow {
+      0% { background-color: rgba(0,87,149,0); }
+      35% { background-color: rgba(0,87,149,.14); }
+      100% { background-color: rgba(0,87,149,.06); }
+    }
+    #porownanie.compare-highlight .compare-col-mtm { animation: compare-col-glow 1.2s ease forwards; }
+
+    /* Eyebrow z kreską */
+    .eyebrow { display: inline-flex; align-items: center; gap: .625rem; font-family: 'Space Grotesk', sans-serif; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 1.75rem; height: 2px; background: currentColor; opacity: .55; }
+
+    /* Subtelna siatka techniczna do tła hero */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 90% 70% at 75% 0%, #000 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 70% at 75% 0%, #000 40%, transparent 100%);
+    }
+
+    .link-arrow svg { transition: transform .2s ease; }
+    .link-arrow:hover svg { transform: translateX(3px); }
+
+    .skip-link:focus { position: fixed; top: .5rem; left: .5rem; z-index: 100; padding: .5rem 1rem; background: var(--accent); color: #fff; border-radius: .375rem; outline: 2px solid #fff; }
+
+    /* Pasek postępu czytania */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 60; background: linear-gradient(90deg, var(--accent), var(--accent-lighter)); transform-origin: 0 50%; will-change: width; transition: width .1s linear; }
+
+    /* Aktywny link w nawigacji (scrollspy) */
+    .nav-link { position: relative; }
+    .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1.45rem; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .25s cubic-bezier(.16,1,.3,1); }
+    .nav-link.is-active { color: #0b1620; }
+    .nav-link.is-active::after { transform: scaleX(1); }
+    .mobile-nav-link.is-active { color: var(--accent-dark); font-weight: 600; }
+
+    /* Hero – wejście ze staggerem */
+    .hero-item { opacity: 0; transform: translateY(1.25rem); transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); transition-delay: var(--hero-delay, 0ms); }
+    #hero.hero-ready .hero-item { opacity: 1; transform: translateY(0); }
+    .hero-visual-wrap { opacity: 0; transform: scale(.96) translateY(1rem); transition: opacity .8s cubic-bezier(.16,1,.3,1) .35s, transform .8s cubic-bezier(.16,1,.3,1) .35s; will-change: transform; }
+    #hero.hero-ready .hero-visual-wrap { opacity: 1; transform: scale(1) translateY(0); }
+    .hero-visual-glow {
+      position: absolute; inset: -12% -8% -20% -8%;
+      background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(0,87,149,.45), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-visual-media {
+      position: relative; z-index: 1;
+      border-radius: 12px;
+      box-shadow: 0 24px 64px -16px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
+    }
+    #hero-heading { display: block; text-align: left; }
+    #hero-heading .hero-heading-title { margin: 0; padding: 0; }
+    .hero-copy { display: flex; flex-direction: column; align-items: stretch; }
+    .hero-body p { margin: 0; }
+    .hero-stats-cell { display: flex; flex-direction: column; min-height: 100%; }
+    .hero-stats-cell dd { flex: 1; }
+
+    /* Menu mobilne – płynne rozwijanie */
+    #mobile-menu { transition: max-height .3s ease, opacity .25s ease; overflow: hidden; max-height: 0; opacity: 0; }
+    #mobile-menu.is-open { max-height: 42rem; opacity: 1; }
+    #menu-toggle .icon-close { display: none; }
+    #menu-toggle[aria-expanded="true"] .icon-open { display: none; }
+    #menu-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+    /* Przycisk „do góry” */
+    .to-top { opacity: 0; visibility: hidden; transform: translateY(.5rem); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
+    .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    /* Walidacja formularza */
+    .field-error { display: none; }
+    .field-error.is-shown { display: block; }
+    input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #dc2626 !important; background-color: #fef2f2 !important; }
+    input[aria-invalid="true"]:focus, textarea[aria-invalid="true"]:focus { box-shadow: 0 0 0 2px rgba(220,38,38,.25) !important; }
+
+    /* Schemat linii */
+    .line-step-btn[aria-selected="true"] { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 8px 24px -8px rgba(0,87,149,.45); }
+    .line-connector { flex: 1; min-width: 1rem; height: 2px; background: linear-gradient(90deg, #dce2ea, var(--accent-lighter), #dce2ea); margin-top: 1.25rem; }
+    @media (max-width: 1023px) {
+      .line-flow-desktop { display: none; }
+    }
+    @media (min-width: 1024px) {
+      .line-flow-mobile { display: none; }
+    }
+    .line-accordion-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.16,1,.3,1); }
+    .line-accordion-panel.is-open { grid-template-rows: 1fr; }
+    .line-accordion-panel > div { overflow: hidden; }
+    @media (prefers-reduced-motion: reduce) {
+      .line-accordion-panel { transition: none; }
+    }
+
+    .line-accordion-trigger[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+    @media (prefers-reduced-motion: reduce) {
+      .line-accordion-trigger .faq-chevron { transition: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-progress, .nav-link::after, .to-top, .hero-item, .hero-visual-wrap,
+      #header-inner, .reveal-stagger, .compare-row { transition: none; }
+    }
+  </style>
+
+  <!-- schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wykładarka.pl/#organization",
+        "name": "Spolex Sp. z o.o.",
+        "alternateName": "Autoryzowany partner Pattyn w Polsce",
+        "url": "https://spolex.com/pl/",
+        "logo": "https://spolex.com/wp-content/uploads/2023/03/spolex-logo.svg",
+        "email": "biuro@spolex.com",
+        "telephone": "+48-22-351-71-91",
+        "description": "Autoryzowany partner Pattyn Packing Lines w Polsce – dobór, integracja linii pakowania, uruchomienie i serwis maszyn.",
+        "address": { "@type": "PostalAddress", "streetAddress": "ul. Rzemieślnicza 13", "postalCode": "05-082", "addressLocality": "Blizne Łaszczyńskiego", "addressCountry": "PL" },
+        "areaServed": "PL",
+        "knowsAbout": ["wykładarka worków", "maszyna do wykładania worków", "maszyny Pattyn", "bag in box", "worek na wymiar z rolki", "kartonowanie produktów luzem"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wykładarka.pl/#website",
+        "name": "Wykładarka worków",
+        "url": "https://wykładarka.pl/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://wykładarka.pl/#webpage",
+        "url": "https://wykładarka.pl/",
+        "name": "Wykładarka worków – maszyna do wykładania worków do kartonów",
+        "description": "Wykładarka worków Pattyn: maszyna do formowania worków i wkładania do kartonu — worek na wymiar z rolki folii PE (bag-in-box, MTM). Automatyczne wykładanie worków do kartonów i skrzynek. Integracja linii i serwis w Polsce.",
+        "inLanguage": "pl-PL",
+        "isPartOf": { "@id": "https://wykładarka.pl/#website" },
+        "publisher": { "@id": "https://wykładarka.pl/#organization" },
+        "about": { "@type": "Thing", "name": "Wykładarka worków" }
+      },
+      {
+        "@type": "Product",
+        "name": "Pattyn FLEXIM 41",
+        "alternateName": "Wykładarka worków",
+        "description": "Pattyn FLEXIM 41 (Bagmaker Inserter) – wykładarka worków formująca i wykładająca worki PE na wymiar z rolki macierzystej do kartonów, skrzynek EPS, tac, puszek i innych pojemników. Do 22 opak./min, folia od 10 µm, do 4000 worków z jednej rolki.",
+        "image": "https://wykładarka.pl/assets/hero-maszyna.webp",
+        "brand": { "@type": "Brand", "name": "Pattyn" },
+        "manufacturer": { "@type": "Organization", "name": "Pattyn Packing Lines" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Co obejmuje etap formowania kartonu w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Karton zbiorczy jest formowany i podklejany taśmą lub klejem — to pierwszy etap w linii. Podłączamy urządzenie do formowania kartonu CE-31-P, które podkleja spód za pomocą taśmy samoprzylepnej lub kleju hot-melt." }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak działa wykładanie worka w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Z rolki macierzystej folii PE powstaje worek na wymiar i zostaje włożony do kartonu lub skrzynki — bez magazynu gotowych worków. Podłączamy modele wykładarek worków np.: Flexim-41, ZIM-31, RAZIM-51." }
+          },
+          {
+            "@type": "Question",
+            "name": "Co obejmuje dozowanie i ważenie w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Produkt luzem wpada do worka z zadaną wagą lub liczbą sztuk w kartonie. Podłączamy maszynę dozującą wagowo lub ilościowo np.: LVF14A, LVF14B, AVL42, BVL42." }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak zamykany jest worek w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Worek zostaje zgrzany lub założony na zakładkę, nadmiar powietrza zostaje ewakuowany przed zamknięciem. Podłączamy maszynę DF31 lub DS41 w zależności od produktu." }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak zamykany jest karton w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Klapy kartonu są składane i zaklejane taśmą samoprzylepną lub klejem Hot-Melt. Podłączamy zamykarko-zaklejarkę CC-41." }
+          },
+          {
+            "@type": "Question",
+            "name": "Co obejmuje paletyzacja w linii bag-in-box?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Gotowe zamknięte kartony trafiają do maszyny paletyzującej i są układane na palecie według zaprogramowanego wzoru — paletyzator warstwowy lub robot." }
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Odcinanie worków z rolki folii — animacja Pattyn",
+        "description": "Animacja procesu odcinania worków z rolki folii w wykładarce worków.",
+        "contentUrl": "https://wykładarka.pl/assets/filmy/odcinanie-workow-z-rolki.mp4",
+        "thumbnailUrl": "https://wykładarka.pl/assets/hero-maszyna.webp",
+        "uploadDate": "2024-01-01",
+        "inLanguage": "pl-PL"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Wykładarka worków Pattyn FLEXIM-41 — formowanie worka z rolki",
+        "description": "Film pokazowy wykładarki worków Pattyn FLEXIM-41 — formowanie worka z rolki folii i wkładanie do kartonu.",
+        "contentUrl": "https://wykładarka.pl/assets/filmy/flexim-41-bagmaker-inserter.m4v",
+        "thumbnailUrl": "https://wykładarka.pl/assets/hero-maszyna.webp",
+        "uploadDate": "2024-01-01",
+        "inLanguage": "pl-PL"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Pattyn CEFLEX-41 MTM12 – PM12 – MTM60",
+        "description": "Film z linii bag-in-box: Pattyn CEFLEX-41 MTM12 – PM12 – MTM60.",
+        "contentUrl": "https://wykładarka.pl/assets/filmy/ceflex-41-mtm12-pm12-mtm60.m4v",
+        "thumbnailUrl": "https://wykładarka.pl/assets/hero-maszyna.webp",
+        "uploadDate": "2024-01-01",
+        "inLanguage": "pl-PL"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-sans text-steel-800 bg-white antialiased selection:bg-accent-500/20 selection:text-navy-900">
+
+  <a href="#main" class="skip-link sr-only focus:not-sr-only">Przejdź do treści</a>
+
+  <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Postęp przewijania strony" aria-hidden="true"></div>
+
+  <!-- ========== 1. HEADER ========== -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-steel-200/70 transition-shadow duration-300" role="banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="header-inner" class="flex items-center justify-between h-16 lg:h-[4.5rem]">
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-[0.75rem] xl:text-[0.8125rem] font-medium text-steel-600 max-w-[52rem] overflow-x-auto" aria-label="Nawigacja sekcji">
+          <a href="#problem" class="nav-link hover:text-navy-900 transition-colors shrink-0">Problem</a>
+          <a href="#jak-dziala" class="nav-link hover:text-navy-900 transition-colors shrink-0">Sposób działania</a>
+          <a href="#korzysci" class="nav-link hover:text-navy-900 transition-colors shrink-0">Korzyści</a>
+          <a href="#porownanie" class="nav-link hover:text-navy-900 transition-colors shrink-0">Porównanie</a>
+          <a href="#linia" class="nav-link hover:text-navy-900 transition-colors shrink-0">Linia</a>
+          <a href="#zastosowania" class="nav-link hover:text-navy-900 transition-colors shrink-0">Branże</a>
+          <a href="#filmy" class="nav-link hover:text-navy-900 transition-colors shrink-0">Filmy</a>
+        </nav>
+
+        <div class="flex items-center gap-3 ml-auto">
+          <a href="#kontakt" class="hidden sm:inline-flex items-center gap-2 justify-center px-4 py-2.5 text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg shadow-sm shadow-accent-500/30 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-colors">
+            Zapytaj o dobór maszyny
+          </a>
+          <button type="button" id="menu-toggle" class="lg:hidden p-2 rounded-lg text-steel-700 hover:bg-steel-100 focus:outline-none focus:ring-2 focus:ring-accent-500" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otwórz menu">
+            <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg class="icon-close w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden border-t border-steel-200 bg-white" aria-label="Menu mobilne">
+      <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium">
+        <a href="#problem" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Problem</a>
+        <a href="#jak-dziala" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Sposób działania</a>
+        <a href="#korzysci" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Korzyści</a>
+        <a href="#porownanie" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Porównanie</a>
+        <a href="#linia" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Linia</a>
+        <a href="#zastosowania" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Branże</a>
+        <a href="#filmy" class="mobile-nav-link py-2.5 text-steel-700 border-b border-steel-100">Filmy</a>
+        <a href="#kontakt" class="mobile-nav-link mt-3 inline-flex justify-center px-4 py-3 font-semibold text-white bg-accent-500 rounded-lg">Zapytaj o dobór maszyny</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== 2. HERO ========== -->
+    <section id="hero" class="relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-navy-900 text-white overflow-hidden" aria-labelledby="hero-heading">
+      <div id="hero-grid-bg" class="hero-parallax-layer absolute inset-0 grid-bg" aria-hidden="true"></div>
+      <div id="hero-glow-bg" class="hero-parallax-layer absolute -top-32 -right-32 w-[36rem] h-[36rem] bg-accent-500/20 rounded-full blur-[140px]" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-steel-500/40 to-transparent" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-x-12 xl:gap-x-16 lg:items-start">
+          <!-- Lewa kolumna: copy -->
+          <div class="hero-copy min-w-0 lg:max-w-[40rem]">
+            <h1 id="hero-heading" class="hero-item font-display font-bold tracking-tight" style="--hero-delay: 0ms">
+              <span class="hero-heading-title block text-[2rem] leading-[1.12] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08] text-white">Wykładarka worków</span>
+              <span class="block w-14 h-1 mt-5 rounded-full bg-accent-500" aria-hidden="true"></span>
+            </h1>
+            <div class="hero-body hero-item mt-6 space-y-5 text-base sm:text-lg text-steel-200 leading-relaxed text-justify" style="--hero-delay: 160ms">
+              <p>Nowoczesna maszyna do wkładania worków to zaawansowane rozwiązanie przeznaczone do automatycznego formowania worka z rękawa foliowego oraz jego precyzyjnego umieszczania wewnątrz kartonu. Takie urządzenie do wkładania worków znacząco usprawnia proces pakowania, eliminując pracę ręczną, zwiększając wydajność oraz zapewniając powtarzalną jakość przygotowania opakowań.</p>
+              <p>Nasza wykładarka worków automatycznie rozwija rękaw foliowy, wykonuje zgrzew, odcina worek do wymaganej długości, a następnie otwiera go i umieszcza w kartonie. Dzięki temu proces wykładania workiem oraz wyścielania workiem odbywa się w pełni automatycznie, higienicznie i bez udziału operatora. Urządzenie może pracować z kartonami o różnych wymiarach oraz z workami wykonanymi z folii PE.</p>
+            </div>
+          </div>
+
+          <!-- Prawa kolumna: wizual maszyny (mobile: pod tekstem) -->
+          <div id="hero-visual" class="hero-visual-wrap relative mt-10 lg:mt-2 w-full max-w-lg mx-auto lg:max-w-none lg:mx-0 lg:justify-self-stretch">
+            <div class="hero-visual-glow" aria-hidden="true"></div>
+            <div class="hero-visual-media aspect-[4/3] sm:aspect-[16/10] lg:aspect-[3/2] overflow-hidden bg-navy-800/80">
+              <!-- TODO: realne zdjęcie – assets/hero-maszyna.webp -->
+              <img src="assets/hero-maszyna.webp" alt="Wykładarka worków Pattyn – maszyna do wykładania worków na wymiar do kartonów" width="2560" height="1715" class="absolute inset-0 w-full h-full object-cover object-center" loading="eager" decoding="async" fetchpriority="high">
+              <!-- TODO: opcjonalne wideo – assets/hero-wykladarka.mp4 (autoplay muted loop playsinline) -->
+              <video id="hero-machine-video" class="hidden absolute inset-0 w-full h-full object-cover object-center" autoplay muted loop playsinline preload="none" poster="assets/hero-maszyna.webp" aria-hidden="true"></video>
+            </div>
+            <p class="relative z-10 mt-3 text-xs text-steel-400 text-left leading-relaxed">Wykładarka worków · formowanie worka z rolki · wkładanie do kartonu</p>
+            <div class="hero-item relative z-10 mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4" style="--hero-delay: 280ms">
+              <a href="#kontakt" class="group inline-flex items-center justify-center gap-2 w-full sm:w-auto sm:flex-1 lg:flex-none px-7 py-4 text-base font-semibold text-white bg-accent-500 hover:bg-accent-400 rounded-[10px] shadow-lg shadow-accent-500/25 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-navy-900 transition-all">
+                Zapytaj o dobór
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+              <a href="#jak-dziala" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto sm:flex-1 lg:flex-none px-7 py-4 text-base font-semibold text-white border border-steel-500 hover:border-steel-300 hover:bg-white/5 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy-900 transition-colors">
+                Zobacz, jak działa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pasek statystyk – animowane liczniki count-up -->
+        <dl class="hero-item relative mt-12 lg:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-steel-700/40 border border-steel-700/40 rounded-xl overflow-hidden" style="--hero-delay: 400ms">
+          <div class="hero-stats-cell bg-navy-900/60 backdrop-blur px-4 sm:px-6 py-6 sm:py-7">
+            <dt class="counter text-3xl sm:text-4xl font-display font-bold text-accent-400 tabular-nums" data-to="30" data-prefix="do " data-suffix="%">do 0%</dt>
+            <dd class="mt-1.5 text-sm text-steel-300 leading-snug">oszczędności na worku robionym na maszynie w porównaniu z gotowym workiem</dd>
+          </div>
+          <div class="hero-stats-cell bg-navy-900/60 backdrop-blur px-4 sm:px-6 py-6 sm:py-7">
+            <dt class="counter text-3xl sm:text-4xl font-display font-bold text-accent-400 tabular-nums" data-to="10" data-prefix="od " data-suffix=" µm">od 0 µm</dt>
+            <dd class="mt-1.5 text-sm text-steel-300 leading-snug">grubość folii PE</dd>
+          </div>
+          <div class="hero-stats-cell bg-navy-900/60 backdrop-blur px-4 sm:px-6 py-6 sm:py-7">
+            <dt class="counter text-3xl sm:text-4xl font-display font-bold text-accent-400 tabular-nums" data-to="22" data-prefix="do " data-suffix="/min">do 0/min</dt>
+            <dd class="mt-1.5 text-sm text-steel-300 leading-snug">opakowań na minutę</dd>
+          </div>
+          <div class="hero-stats-cell bg-navy-900/60 backdrop-blur px-4 sm:px-6 py-6 sm:py-7">
+            <dt class="counter text-3xl sm:text-4xl font-display font-bold text-accent-400 tabular-nums" data-to="4000" data-prefix="do " data-suffix="">do 0</dt>
+            <dd class="mt-1.5 text-sm text-steel-300 leading-snug">worków z jednej rolki – większa autonomia linii</dd>
+          </div>
+        </dl>
+        <p class="hero-item mt-3 text-xs text-steel-500 text-left w-full" style="--hero-delay: 480ms">
+          Wartości orientacyjne, zależne od formatu i produktu — dane Pattyn.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== 3. PROBLEM ========== -->
+    <section id="problem" class="py-20 lg:py-28 bg-white text-justify hyphens-auto" aria-labelledby="problem-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal max-w-3xl">
+          <p class="eyebrow text-accent-600 mb-4"><span class="text-steel-400">01</span> Problem</p>
+          <h2 id="problem-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">
+            Pakowanie produktów luzem w sposób ręczny jest czasochłonne i kosztowne
+          </h2>
+          <p class="mt-5 text-lg text-steel-600 leading-relaxed">
+            Przy ręcznym pakowaniu i pracy na gotowych workach koszt rośnie w trzech miejscach: w cenie folii, w czasie przezbrojeń oraz w magazynie wielu wymiarów worków pod różne kartony. Maszyna formująca worek z rolki i wkładająca go do kartonu — wykładarka worków — eliminuje te ograniczenia.
+          </p>
+        </div>
+        <ul class="mt-12 grid sm:grid-cols-3 gap-6 reveal-grid">
+          <li class="reveal-stagger group flex flex-col p-6 bg-white border border-steel-200 rounded-xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 0">
+            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-navy-900 text-accent-400 mb-3 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-navy-900">Niska produktywność</h3>
+            <p class="mt-1.5 text-sm text-steel-600 leading-snug">Linia ręczna lub półautomatyczna wymaga ciągłej obecności personelu produkcyjnego</p>
+          </li>
+          <li class="reveal-stagger group flex flex-col p-6 bg-white border border-steel-200 rounded-xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 1">
+            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-navy-900 text-accent-400 mb-3 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10a4 4 0 108 0 4 4 0 00-8 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 14a4 4 0 10-8 0 4 4 0 008 0z"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-navy-900">Droższa folia</h3>
+            <p class="mt-1.5 text-sm text-steel-600 leading-snug">Płacisz za gotowy worek o wielu wymiarach (wytworzenie, spakowanie i dostawę) zamiast za jedną macierzystą rolkę folii</p>
+          </li>
+          <li class="reveal-stagger group flex flex-col p-6 bg-white border border-steel-200 rounded-xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 2">
+            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-navy-900 text-accent-400 mb-3 shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-navy-900">Magazyn worków</h3>
+            <p class="mt-1.5 text-sm text-steel-600 leading-snug">Inny karton często znaczy inny worek w magazynie — zapas rośnie. Nawet karton o tej samej podstawie a innej wysokości wymaga nowego wymiaru worka co skutkuje kolejnym indeksem magazynowym.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 4. JAK TO DZIAŁA ========== -->
+    <section id="jak-dziala" class="py-20 lg:py-28 bg-steel-50 border-y border-steel-200/70 text-justify hyphens-auto" aria-labelledby="jak-dziala-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <p class="eyebrow text-accent-600 mb-4"><span class="text-steel-400">02</span> Sposób działania</p>
+            <h2 id="jak-dziala-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">
+              Jak maszyna formuje worek i wkłada go do kartonu
+            </h2>
+            <p class="mt-4 text-lg text-steel-600 leading-relaxed">
+              Od rolki folii do kartonu z produktem luzem — konfekcjonowanie worka na wymiar, wkładanie do opakowania zbiorczego i wywinięcie mankietu na jednej linii, bez magazynu gotowych worków.
+            </p>
+            <ol id="process-steps" class="mt-9 space-y-4" aria-label="Etapy procesu bag-in-box">
+              <li class="process-step flex gap-4 px-3 py-2 -mx-3" data-process-step="1">
+                <span class="process-step-num flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-navy-900 text-white font-display text-sm font-bold ring-4 ring-white transition-colors" aria-hidden="true">1</span>
+                <span class="block pt-1 flex-1 min-w-0"><strong class="text-navy-900 font-semibold">Rolka macierzysta folii</strong> <span class="text-steel-600">– rękaw PE na rolce; jedna szerokość rolki, wiele długości worka bez wymiany materiału</span></span>
+              </li>
+              <li class="process-step flex gap-4 px-3 py-2 -mx-3" data-process-step="2">
+                <span class="process-step-num flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-navy-900 text-white font-display text-sm font-bold ring-4 ring-white transition-colors" aria-hidden="true">2</span>
+                <span class="block pt-1 flex-1 min-w-0"><strong class="text-navy-900 font-semibold">Formowanie worka na wymiar</strong> <span class="text-steel-600">– folia rozwija się na zaprogramowaną długość, worek jest zgrzewany u dołu i odcinany z rolki</span></span>
+              </li>
+              <li class="process-step flex gap-4 px-3 py-2 -mx-3" data-process-step="3">
+                <span class="process-step-num flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-navy-900 text-white font-display text-sm font-bold ring-4 ring-white transition-colors" aria-hidden="true">3</span>
+                <span class="block pt-1 flex-1 min-w-0"><strong class="text-navy-900 font-semibold">Wkładanie worka do kartonu</strong> <span class="text-steel-600">– maszyna wykłada worek do kartonu lub skrzynki i wywija mankiet na zewnątrz opakowania, gotowego do napełnienia produktem</span></span>
+              </li>
+            </ol>
+          </div>
+          <div class="reveal">
+            <figure class="rounded-2xl overflow-hidden ring-1 ring-steel-200 shadow-card bg-navy-900">
+              <div class="aspect-[4/3] sm:aspect-video bg-navy-950">
+                <video class="w-full h-full object-contain" controls preload="metadata" playsinline title="Animacja: odcinanie worków z rolki folii – Pattyn">
+                  <source src="assets/filmy/odcinanie-workow-z-rolki.mp4" type="video/mp4">
+                  Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                </video>
+              </div>
+              <figcaption class="px-4 py-3 text-xs text-steel-400 bg-navy-900 border-t border-steel-700/50 text-center">Odcinanie worków z rolki folii — animacja Pattyn</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. KORZYŚCI (ciemna – lustro do sekcji Problem) ========== -->
+    <section id="korzysci" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden text-justify hyphens-auto" aria-labelledby="korzysci-heading">
+      <div class="absolute top-0 right-0 w-[28rem] h-[28rem] bg-accent-500/10 rounded-full blur-[120px]" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow text-accent-400 mb-4"><span class="text-steel-500">03</span> Korzyści</p>
+          <h2 id="korzysci-heading" class="font-display text-[1.35rem] sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white lg:whitespace-nowrap">Zalety maszyny formującej worek i wkładającej go do kartonu</h2>
+        </div>
+        <div class="mt-14 grid md:grid-cols-3 gap-6 reveal-grid">
+          <!-- 1 ← Niska produktywność -->
+          <article class="reveal-stagger relative p-6 sm:p-7 bg-white text-steel-800 border border-steel-200 rounded-2xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 0">
+            <span class="absolute top-6 right-6 font-display text-4xl font-bold text-steel-100" aria-hidden="true">01</span>
+            <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-accent-500 text-white mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-navy-900">Automatyczne wkładanie worka do kartonu</h3>
+            <p class="mt-2 text-3xl sm:text-4xl font-display font-bold text-accent-500 tabular-nums">do 20/min</p>
+            <p class="mt-2 text-sm text-steel-600 leading-snug">
+              Worek formowany na maszynie jest od razu wkładany do kartonu — bez ręcznego rozkładania worków, w tempie linii bag-in-box.
+            </p>
+          </article>
+          <!-- 2 ← Droższa folia -->
+          <article class="reveal-stagger relative p-6 sm:p-7 bg-white text-steel-800 border border-steel-200 rounded-2xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 1">
+            <span class="absolute top-6 right-6 font-display text-4xl font-bold text-steel-100" aria-hidden="true">02</span>
+            <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-accent-500 text-white mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10a4 4 0 108 0 4 4 0 00-8 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 14a4 4 0 10-8 0 4 4 0 008 0z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-navy-900">Tańszy worek z rolki folii</h3>
+            <p class="mt-2 text-3xl sm:text-4xl font-display font-bold text-accent-500 tabular-nums">do −30%</p>
+            <p class="mt-2 text-sm text-steel-600 leading-snug">
+              Płacisz za rękaw foliowy na rolce, a nie za gotowy worek skonfekcjonowany na wymiar — niższy koszt jednostkowy opakowania.
+            </p>
+          </article>
+          <!-- 3 ← Magazyn worków -->
+          <article class="reveal-stagger relative p-6 sm:p-7 bg-white text-steel-800 border border-steel-200 rounded-2xl shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300" style="--stagger-i: 2">
+            <span class="absolute top-6 right-6 font-display text-4xl font-bold text-steel-100" aria-hidden="true">03</span>
+            <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-accent-500 text-white mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-navy-900">Jedna rolka zamiast wielu SKU worków</h3>
+            <p class="mt-2 text-3xl sm:text-4xl font-display font-bold text-accent-500 tabular-nums">1 wymiar rolki</p>
+            <p class="mt-2 text-sm text-steel-600 leading-snug">
+              Worek na wymiar z tej samej rolki pasuje do wielu wysokości kartonu — mniejszy magazyn folii, bez dziesiątek indeksów gotowych worków.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. PORÓWNANIE ========== -->
+    <section id="porownanie" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden" aria-labelledby="porownanie-heading" data-compare-section>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] bg-accent-500/10 rounded-full blur-[150px]" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow text-accent-400 mb-4"><span class="text-steel-500">04</span> Porównanie</p>
+          <h2 id="porownanie-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight">
+            Worek z rolki czy gotowy worek
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-steel-300 lg:whitespace-nowrap">Worek formowany na maszynie (MTM, z rolki) czy gotowy worek — porównujemy koszt folii, magazyn i elastyczność formatów kartonu.</p>
+        </div>
+        <div class="mt-12 reveal overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+          <table class="w-full min-w-[680px] text-left border-separate border-spacing-0">
+            <caption class="sr-only">Porównanie worka na wymiar z rolki i gotowego worka</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="py-4 pr-6 text-sm font-semibold uppercase tracking-wider text-steel-400 align-bottom w-1/3">Kryterium</th>
+                <th scope="col" class="py-4 px-6 align-bottom">
+                  <span class="inline-flex items-center gap-2 font-display text-base font-bold text-accent-400">
+                    <span class="w-2 h-2 rounded-full bg-accent-400"></span> Worek na wymiar (z rolki)
+                  </span>
+                </th>
+                <th scope="col" class="py-4 pl-6 align-bottom font-display text-base font-semibold text-steel-300">Gotowy worek (Pre-made)</th>
+              </tr>
+            </thead>
+            <tbody class="text-[0.95rem]">
+              <tr class="compare-row" style="--row-i: 0">
+                <th scope="row" class="py-5 pr-6 font-semibold text-white border-t border-steel-700 align-top">Koszt folii</th>
+                <td class="compare-col-mtm py-5 px-6 text-steel-100 border-t border-steel-700 bg-accent-500/[0.06] align-top">Rolka macierzysta do 60 kg zawierająca do kilku tysięcy worków</td>
+                <td class="py-5 pl-6 text-steel-400 border-t border-steel-700 align-top">Worek już uformowany – koszt konfekcjonowania worków</td>
+              </tr>
+              <tr class="compare-row" style="--row-i: 1">
+                <th scope="row" class="py-5 pr-6 font-semibold text-white border-t border-steel-700 align-top">Magazyn / SKU</th>
+                <td class="compare-col-mtm py-5 px-6 text-steel-100 border-t border-steel-700 bg-accent-500/[0.06] align-top">Jedna szerokość rolki dla wielu rozmiarów (długości) worków</td>
+                <td class="py-5 pl-6 text-steel-400 border-t border-steel-700 align-top">Osobny worek (SKU) na każdy format kartonu</td>
+              </tr>
+              <tr class="compare-row" style="--row-i: 2">
+                <th scope="row" class="py-5 pr-6 font-semibold text-white border-t border-steel-700 align-top">Elastyczność rozmiarów</th>
+                <td class="compare-col-mtm py-5 px-6 text-steel-100 border-t border-steel-700 bg-accent-500/[0.06] align-top">Długość worka ustawiasz w maszynie — nowy karton bez czekania na dostawę worka</td>
+                <td class="py-5 pl-6 text-steel-400 border-t border-steel-700 align-top">Zamówienie i dostawa nowego rozmiaru worka</td>
+              </tr>
+              <tr class="compare-row" style="--row-i: 3">
+                <th scope="row" class="py-5 pr-6 font-semibold text-white border-t border-steel-700 align-top">Dopasowanie / higiena</th>
+                <td class="compare-col-mtm py-5 px-6 text-steel-100 border-t border-steel-700 bg-accent-500/[0.06] align-top">Minimalna ilość folii i luzu – worek otwierany tuż przed włożeniem do opakowania</td>
+                <td class="py-5 pl-6 text-steel-400 border-t border-steel-700 align-top">Standardowe wymiary – często więcej folii</td>
+              </tr>
+              <tr class="compare-row" style="--row-i: 4">
+                <th scope="row" class="py-5 pr-6 font-semibold text-white border-t border-b border-steel-700 align-top">Kiedy ma zastosowanie</th>
+                <td class="compare-col-mtm py-5 px-6 text-steel-100 border-t border-b border-steel-700 bg-accent-500/[0.06] align-top rounded-b-lg">Przy większych wolumenach, standaryzacji podstaw kartonu</td>
+                <td class="py-5 pl-6 text-steel-400 border-t border-b border-steel-700 align-top rounded-b-lg">Bardzo małe wolumeny, dużo różnych podstaw kartonów</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCHEMAT LINII BAG-IN-BOX ========== -->
+    <section id="linia" class="pt-20 lg:pt-28 pb-8 lg:pb-10 bg-white" aria-labelledby="linia-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow text-accent-600 mb-4"><span class="text-steel-400">05</span> Linia</p>
+          <h2 id="linia-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy-900 lg:whitespace-nowrap">
+            Cała linia bag-in-box — nie tylko jedna maszyna
+          </h2>
+          <p class="mt-4 text-lg text-steel-600 max-w-3xl">Wybierz etap i zobacz, co się w nim dzieje oraz co możemy zaproponować do Twojej linii.</p>
+        </div>
+
+        <!-- Desktop: poziomy ciąg etapów -->
+        <div class="line-flow-desktop mt-14 reveal" id="line-flow-desktop">
+          <div class="flex items-start gap-1" role="tablist" aria-label="Etapy linii bag-in-box">
+            <button type="button" role="tab" id="line-tab-0" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="true" aria-controls="line-panel" data-line-step="0">Formowanie kartonu</button>
+            <span class="line-connector hidden xl:block" aria-hidden="true"></span>
+            <button type="button" role="tab" id="line-tab-1" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="false" aria-controls="line-panel" data-line-step="1">Wykładanie worka</button>
+            <span class="line-connector hidden xl:block" aria-hidden="true"></span>
+            <button type="button" role="tab" id="line-tab-2" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="false" aria-controls="line-panel" data-line-step="2">Dozowanie / ważenie</button>
+            <span class="line-connector hidden xl:block" aria-hidden="true"></span>
+            <button type="button" role="tab" id="line-tab-3" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="false" aria-controls="line-panel" data-line-step="3">Zamknięcie worka</button>
+            <span class="line-connector hidden xl:block" aria-hidden="true"></span>
+            <button type="button" role="tab" id="line-tab-4" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="false" aria-controls="line-panel" data-line-step="4">Zamknięcie kartonu</button>
+            <span class="line-connector hidden xl:block" aria-hidden="true"></span>
+            <button type="button" role="tab" id="line-tab-5" class="line-step-btn shrink-0 px-3 py-2.5 text-xs xl:text-sm font-semibold text-steel-700 bg-white border border-steel-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500" aria-selected="false" aria-controls="line-panel" data-line-step="5">Paletyzacja</button>
+          </div>
+          <div id="line-panel" role="tabpanel" aria-labelledby="line-tab-0" class="mt-8 p-6 sm:p-8 bg-steel-50 rounded-2xl ring-1 ring-steel-200 shadow-card">
+            <div class="line-panel-content" data-line-content="0">
+              <h3 class="font-display text-xl font-bold text-navy-900">Formowanie kartonu</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Karton zbiorczy jest formowany i podklejany taśmą lub klejem — to pierwszy etap w Twojej linii.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy urządzenie do formowania kartonu CE-31-P, które podkleja spód za pomocą taśmy samoprzylepnej lub za pomocą kleju (hot-melt). Sposób zaklejania zależy od wybranego modelu maszyny.</p>
+            </div>
+            <div class="line-panel-content hidden" data-line-content="1">
+              <h3 class="font-display text-xl font-bold text-navy-900">Wykładanie worka</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Z rolki macierzystej folii PE powstaje worek na wymiar i zostaje włożony do kartonu lub skrzynki — bez magazynu gotowych worków. Rolka folii zawiera kilka tysięcy worków w zależności od grubości i szerokości.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy jeden z dostępnych modeli wykładarek worków np.: Flexim-41; ZIM-31; RAZIM-51. Wybór modelu zależy od wydajności, rodzaju folii.</p>
+            </div>
+            <div class="line-panel-content hidden" data-line-content="2">
+              <h3 class="font-display text-xl font-bold text-navy-900">Dozowanie / ważenie</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Produkt luzem wpada do worka — z zadaną wagą lub liczbą sztuk w kartonie.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy maszynę dozującą odmierzającą produkt wagowo lub ilościowo np.: LVF14A, LVF14B, AVL42, BVL42. Dokładny model maszyny zależy od dozowanego produktu.</p>
+            </div>
+            <div class="line-panel-content hidden" data-line-content="3">
+              <h3 class="font-display text-xl font-bold text-navy-900">Zamknięcie worka</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Worek zostaje zgrzany lub założony na zakładkę, nadmiar powietrza zostaje ewakuowany przed zamknięciem.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy maszynę DF31 zamykającą worek na zakładkę lub DS41 zgrzewającą worek. Wybór zależy od rodzaju produktu i preferencji klienta.</p>
+            </div>
+            <div class="line-panel-content hidden" data-line-content="4">
+              <h3 class="font-display text-xl font-bold text-navy-900">Zamknięcie kartonu</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Klapy kartonu są składane i zaklejane za pomocą taśmy samoprzylepnej lub kleju Hot-Melt.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy zamykarko-zaklejarkę CC-41.</p>
+            </div>
+            <div class="line-panel-content hidden" data-line-content="5">
+              <h3 class="font-display text-xl font-bold text-navy-900">Paletyzacja</h3>
+              <p class="mt-3 text-steel-600 leading-relaxed">Gotowe zamknięte kartony trafiają do maszyny paletyzującej i są układane na palecie według zaprogramowanego wzoru.</p>
+              <p class="mt-4 text-sm text-steel-500">Podłączamy paletyzator warstwowy lub robota w zależności od wydajności linii i uwarunkowań lokalowych.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile: akordeon pionowy -->
+        <div class="line-flow-mobile mt-12 space-y-2 reveal" id="line-flow-mobile">
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="true" aria-controls="line-acc-0" id="line-acc-btn-0" data-line-step="0"><span>1. Formowanie kartonu</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-0" class="line-accordion-panel is-open" role="region" aria-labelledby="line-acc-btn-0"><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Karton zbiorczy jest formowany i podklejany taśmą lub klejem — to pierwszy etap w Twojej linii. <span class="block mt-2 text-steel-500">Podłączamy urządzenie do formowania kartonu CE-31-P, które podkleja spód za pomocą taśmy samoprzylepnej lub za pomocą kleju (hot-melt). Sposób zaklejania zależy od wybranego modelu maszyny.</span></div></div>
+          </div>
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="false" aria-controls="line-acc-1" id="line-acc-btn-1" data-line-step="1"><span>2. Wykładanie worka</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-1" class="line-accordion-panel" role="region" aria-labelledby="line-acc-btn-1" hidden><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Z rolki macierzystej folii PE powstaje worek na wymiar i zostaje włożony do kartonu lub skrzynki — bez magazynu gotowych worków. Rolka folii zawiera kilka tysięcy worków w zależności od grubości i szerokości. <span class="block mt-2 text-steel-500">Podłączamy jeden z dostępnych modeli wykładarek worków np.: Flexim-41; ZIM-31; RAZIM-51. Wybór modelu zależy od wydajności, rodzaju folii.</span></div></div>
+          </div>
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="false" aria-controls="line-acc-2" id="line-acc-btn-2" data-line-step="2"><span>3. Dozowanie / ważenie</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-2" class="line-accordion-panel" role="region" aria-labelledby="line-acc-btn-2" hidden><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Napełnienie produktem luzem. <span class="block mt-2 text-steel-500">Podłączamy maszynę dozującą odmierzającą produkt wagowo lub ilościowo np.: LVF14A, LVF14B, AVL42, BVL42. Dokładny model maszyny zależy od dozowanego produktu.</span></div></div>
+          </div>
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="false" aria-controls="line-acc-3" id="line-acc-btn-3" data-line-step="3"><span>4. Zamknięcie worka</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-3" class="line-accordion-panel" role="region" aria-labelledby="line-acc-btn-3" hidden><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Worek zostaje zgrzany lub założony na zakładkę, nadmiar powietrza zostaje ewakuowany przed zamknięciem. <span class="block mt-2 text-steel-500">Podłączamy maszynę DF31 zamykającą worek na zakładkę lub DS41 zgrzewającą worek. Wybór zależy od rodzaju produktu i preferencji klienta.</span></div></div>
+          </div>
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="false" aria-controls="line-acc-4" id="line-acc-btn-4" data-line-step="4"><span>5. Zamknięcie kartonu</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-4" class="line-accordion-panel" role="region" aria-labelledby="line-acc-btn-4" hidden><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Klapy kartonu są składane i zaklejane za pomocą taśmy samoprzylepnej lub kleju Hot-Melt. <span class="block mt-2 text-steel-500">Podłączamy zamykarko-zaklejarkę CC-41.</span></div></div>
+          </div>
+          <div class="line-accordion-item rounded-xl ring-1 ring-steel-200 overflow-hidden bg-white">
+            <button type="button" class="line-accordion-trigger w-full flex items-center justify-between gap-3 px-4 py-4 text-left font-semibold text-navy-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500" aria-expanded="false" aria-controls="line-acc-5" id="line-acc-btn-5" data-line-step="5"><span>6. Paletyzacja</span><svg class="faq-chevron w-5 h-5 text-steel-400 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div id="line-acc-5" class="line-accordion-panel" role="region" aria-labelledby="line-acc-btn-5" hidden><div class="px-4 pb-4 text-sm text-steel-600 leading-relaxed">Gotowe zamknięte kartony trafiają do maszyny paletyzującej i są układane na palecie według zaprogramowanego wzoru. <span class="block mt-2 text-steel-500">Podłączamy paletyzator warstwowy lub robota w zależności od wydajności linii i uwarunkowań lokalowych.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 8. ZASTOSOWANIA ========== -->
+    <section id="zastosowania" class="pt-8 lg:pt-10 pb-8 lg:pb-10 bg-white" aria-labelledby="zastosowania-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow text-accent-600 mb-4"><span class="text-steel-400">06</span> Branże</p>
+          <h2 id="zastosowania-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy-900 lg:whitespace-nowrap">
+            Pakowanie produktów luzem obecne w szerokim przemyśle
+          </h2>
+          <p class="mt-4 text-lg text-steel-600 text-justify">Wykładarka worków — maszyna do wkładania worków do kartonu — sprawdza się tam, gdzie produkt luzem trafia do opakowania zbiorczego: kartonu, skrzynki lub tacy. System bag-in-box z worem na wymiar z rolki obsługuje żywność, chemię i wiele innych branż — poniżej przykłady zastosowań.</p>
+        </div>
+        <ul class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2.5 sm:gap-3 reveal-grid">
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 0">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M10 4a2 2 0 014 0v2.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 6.5c-2.5 0-4.5 2.5-4.5 5.5V20h5v-8c0-3-2-5.5-4.5-5.5z"/><ellipse cx="9.5" cy="19" rx="1.2" ry="1.5" fill="currentColor" stroke="none"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Mięso i drób</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 1">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 12c3.5-4.5 7.5-5 11-3 1.5.8 3 .8 4.5 0 1.2-.6 2.5-.8 3.5-.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 12c3.5 4.5 7.5 5 11 3"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 12L1 14"/><circle cx="15" cy="10.5" r=".9" fill="currentColor" stroke="none"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Ryby</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 2">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 19c-4.5 0-7.5-3.5-7.5-7.5S7.5 4 12 4s7.5 3.5 7.5 7.5S16.5 19 12 19z"/><path stroke-linecap="round" stroke-width="1.7" d="M12 4V2.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 4c1.5-1.2 3.5-1 4.5.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 11c1.5-1 3.5-1 4 1"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Owoce i warzywa</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 3">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 12c2-2 5-3 8-3s6 1 8 3"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 12c1.5 1.5 4 2.5 7 2.5s5.5-1 7-2.5"/><path stroke-linecap="round" stroke-width="1.7" d="M7.5 11.5l1.5 3M11 10.5v4M14.5 11.5l-1.5 3M17 12l-1.5 2.5"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Pieczywo</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 4">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="6" rx="1" stroke-width="1.7"/><path stroke-linecap="round" stroke-width="1.7" d="M7 13h10M7 15h10M7 17h10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 11V9.5a4 4 0 018 0V11"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Masło</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 5">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="9" rx="1.2" stroke-width="1.7"/><path stroke-width="1.7" d="M9.5 8v9M12 8v9M14.5 8v9M5 11.5h14M5 14h14"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Czekolada stała</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 6">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 4.5c-2.5 3-3.5 6.5-2 11 1 1.5 2.5 2 4 1s3-1.5 4-3c1.5-4.5.5-8-2-11"/><path stroke-linecap="round" stroke-width="1.7" d="M12 8v8M9.5 10.5c1 .5 2.5.5 5 0"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Suszone owoce i orzechy</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 7">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 7l4-2 4 2v1.5l-1.5 9.5H9.5L8 8.5V7z"/><path stroke-linecap="round" stroke-width="1.7" d="M9 7.5h6"/><path stroke-linecap="round" stroke-width="1.7" d="M10 13h.01M13 14h.01M11 16h.01M14 12h.01"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Proszki i składniki spożywcze</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 8">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 8h6v2.5c0 3-1.5 5.5-3 7.5"/><path stroke-linecap="round" stroke-width="1.7" d="M8 8h8v1.5"/><path stroke-linecap="round" stroke-width="1.7" d="M9 9.5v1M11 9.5v1M13 9.5v1M15 9.5v1"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Kapsle, zakrętki i opakowania</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 9">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M10 3h4v3h2v12a2 2 0 01-2 2h-4a2 2 0 01-2-2V6h2V3z"/><path stroke-linecap="round" stroke-width="1.7" d="M12 14v4"/><ellipse cx="12" cy="11" rx="2" ry="2.5" stroke-width="1.7"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Oleje i tłuszcze jadalne</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 10">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 4h6l1 14H8L9 4z"/><path stroke-linecap="round" stroke-width="1.7" d="M8 18h8"/><path stroke-linecap="round" stroke-width="1.7" d="M10 12h4"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Chemia i petrochemia</h3>
+          </li>
+          <li class="reveal-stagger group flex flex-col items-center text-center p-3 bg-white ring-1 ring-steel-200 rounded-lg hover:ring-accent-500/50 hover:shadow-card transition-all" style="--stagger-i: 11">
+            <span class="inline-flex w-8 h-8 items-center justify-center rounded-md bg-steel-100 text-accent-500 mb-2 group-hover:bg-accent-500 group-hover:text-white transition-colors" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 17c3-6 11-6 14 0"/><circle cx="8" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="10" cy="15.5" r=".9" fill="currentColor" stroke="none"/><circle cx="14" cy="15.5" r=".9" fill="currentColor" stroke="none"/></svg></span>
+            <h3 class="font-display text-xs sm:text-sm font-semibold text-navy-900 leading-snug">Surowce sypkie i inne branże</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 10. FILMY ========== -->
+    <section id="filmy" class="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-white" aria-labelledby="filmy-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal">
+          <p class="eyebrow text-accent-600 mb-4"><span class="text-steel-400">07</span> Filmy pokazowe</p>
+          <h2 id="filmy-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy-900">Formowanie worka i wkładanie do kartonu w pracy</h2>
+          <p class="mt-4 text-lg text-steel-600 lg:whitespace-nowrap">Zobacz wykładarkę worków w akcji — konfekcjonowanie worka z rolki folii i automatyczne wkładanie do kartonu na linii.</p>
+        </div>
+        <div class="mt-12 grid md:grid-cols-2 gap-8 reveal">
+          <figure class="rounded-2xl overflow-hidden ring-1 ring-steel-200 shadow-card bg-navy-900">
+            <div class="aspect-video bg-navy-950">
+              <video class="w-full h-full object-contain" controls preload="metadata" playsinline title="Pattyn FLEXIM-41 – wykładarka worków">
+                <source src="assets/filmy/flexim-41-bagmaker-inserter.m4v" type="video/mp4">
+                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+              </video>
+            </div>
+            <figcaption class="px-4 py-3 text-xs text-steel-400 bg-navy-900 border-t border-steel-700/50 text-center">Wykładarka worków Pattyn FLEXIM-41 — formowanie worka z rolki</figcaption>
+          </figure>
+          <figure class="rounded-2xl overflow-hidden ring-1 ring-steel-200 shadow-card bg-navy-900">
+            <div class="aspect-video bg-navy-950">
+              <video class="w-full h-full object-contain" controls preload="metadata" playsinline title="Pattyn CEFLEX-41 MTM12 – PM12 – MTM60">
+                <source src="assets/filmy/ceflex-41-mtm12-pm12-mtm60.m4v" type="video/mp4">
+                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+              </video>
+            </div>
+            <figcaption class="px-4 py-3 text-xs text-steel-400 bg-navy-900 border-t border-steel-700/50 text-center">Pattyn CEFLEX-41 MTM12 – PM12 – MTM60</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 13. CTA + FORMULARZ ========== -->
+    <section id="kontakt" class="py-20 lg:py-28 bg-navy-900 text-white relative overflow-hidden" aria-labelledby="kontakt-heading">
+      <div class="absolute inset-0 grid-bg opacity-60" aria-hidden="true"></div>
+      <div class="absolute -bottom-32 -left-32 w-[34rem] h-[34rem] bg-accent-500/15 rounded-full blur-[150px]" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div class="reveal lg:pt-4">
+            <p class="eyebrow text-accent-400 mb-4"><span class="text-steel-500">08</span> Kontakt</p>
+            <h2 id="kontakt-heading" class="font-display text-3xl sm:text-4xl font-bold tracking-tight">
+              Zapytaj o wykładarkę worków
+            </h2>
+            <p class="mt-5 text-lg text-steel-300 leading-relaxed">
+              Napisz, co pakujesz, jaki masz karton i ile opakowań na minutę potrzebujesz — wrócimy z propozycją wykładarki worków, modelu bagmaker inserter i układu linii bag-in-box.
+            </p>
+            <div class="mt-8 p-5 rounded-xl bg-white/5 ring-1 ring-white/10">
+              <p class="text-sm font-semibold text-white">Bezpośredni kontakt</p>
+              <p class="mt-3 font-display text-lg font-semibold text-white">Spolex Sp. z o.o.</p>
+              <p class="mt-2 text-steel-300 leading-relaxed">
+                ul. Rzemieślnicza 13<br>
+                05-082 Blizne Łaszczyńskiego, Polska
+              </p>
+              <p class="mt-4">
+                <a href="tel:+48223517191" class="inline-flex items-center gap-2 text-lg font-display font-semibold text-accent-400 hover:text-accent-300 transition-colors">
+                  <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  22 351 71 91
+                </a>
+              </p>
+              <p class="mt-2">
+                <a href="mailto:biuro@spolex.com" class="inline-flex items-center gap-2 text-base text-steel-200 hover:text-white transition-colors">
+                  <svg class="w-5 h-5 shrink-0 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  biuro@spolex.com
+                </a>
+              </p>
+            </div>
+            <ul class="mt-9 space-y-4">
+              <li class="flex items-center gap-3 text-steel-300"><span class="text-accent-400" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span> Bez zobowiązania – wstępna konsultacja</li>
+              <li class="flex items-center gap-3 text-steel-300"><span class="text-accent-400" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span> Odpowiedź po polsku od zespołu integratora</li>
+              <li class="flex items-center gap-3 text-steel-300"><span class="text-accent-400" aria-hidden="true"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span> Wdrożenia w całej Polsce</li>
+            </ul>
+          </div>
+          <div class="reveal bg-white text-steel-800 rounded-2xl p-6 sm:p-9 shadow-2xl ring-1 ring-black/5">
+            <!-- TODO: action formularza – endpoint API, Formspree, e-mail lub CRM -->
+            <form id="lead-form" action="#" method="post" class="space-y-5" novalidate>
+              <div>
+                <label for="imie" class="block text-sm font-medium text-steel-700 mb-1.5">Imię i nazwisko <span class="text-accent-600">*</span></label>
+                <input type="text" id="imie" name="imie" required autocomplete="name" aria-describedby="err-imie" class="block w-full rounded-lg border border-steel-300 bg-steel-50/50 focus:bg-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30 text-base px-3.5 py-3 transition-colors outline-none">
+                <p id="err-imie" class="field-error mt-1.5 text-sm text-red-600" role="alert">Podaj imię i nazwisko.</p>
+              </div>
+              <div>
+                <label for="firma" class="block text-sm font-medium text-steel-700 mb-1.5">Firma <span class="text-accent-600">*</span></label>
+                <input type="text" id="firma" name="firma" required autocomplete="organization" aria-describedby="err-firma" class="block w-full rounded-lg border border-steel-300 bg-steel-50/50 focus:bg-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30 text-base px-3.5 py-3 transition-colors outline-none">
+                <p id="err-firma" class="field-error mt-1.5 text-sm text-red-600" role="alert">Podaj nazwę firmy.</p>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="block text-sm font-medium text-steel-700 mb-1.5">E-mail <span class="text-accent-600">*</span></label>
+                  <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" aria-describedby="err-email" class="block w-full rounded-lg border border-steel-300 bg-steel-50/50 focus:bg-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30 text-base px-3.5 py-3 transition-colors outline-none">
+                  <p id="err-email" class="field-error mt-1.5 text-sm text-red-600" role="alert">Podaj poprawny adres e-mail.</p>
+                </div>
+                <div>
+                  <label for="telefon" class="block text-sm font-medium text-steel-700 mb-1.5">Telefon</label>
+                  <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel" class="block w-full rounded-lg border border-steel-300 bg-steel-50/50 focus:bg-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30 text-base px-3.5 py-3 transition-colors outline-none">
+                </div>
+              </div>
+              <div>
+                <label for="produkt" class="block text-sm font-medium text-steel-700 mb-1.5">Opis produktu do pakowania <span class="text-accent-600">*</span></label>
+                <textarea id="produkt" name="produkt" required rows="4" aria-describedby="err-produkt hint-produkt" placeholder="Np. mrożone warzywa, karton 400×300×200 mm, ok. 8 kartonów/min" class="block w-full rounded-lg border border-steel-300 bg-steel-50/50 focus:bg-white focus:border-accent-500 focus:ring-2 focus:ring-accent-500/30 text-base px-3.5 py-3 transition-colors outline-none"></textarea>
+                <p id="hint-produkt" class="mt-1.5 text-xs text-steel-500">Im więcej szczegółów (produkt, format kartonu, wydajność), tym trafniejszy dobór.</p>
+                <p id="err-produkt" class="field-error mt-1.5 text-sm text-red-600" role="alert">Opisz krótko produkt do pakowania.</p>
+              </div>
+              <p class="text-xs text-steel-500">Wysyłając formularz, wyrażasz zgodę na kontakt w sprawie oferty. <a href="https://spolex.com/pl/polityka-prywatnosci/" class="text-accent-600 hover:text-accent-700 underline" target="_blank" rel="noopener noreferrer">Polityka prywatności</a>.</p>
+              <button type="submit" id="submit-btn" class="group w-full inline-flex justify-center items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg shadow-lg shadow-accent-500/30 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
+                <svg class="btn-spinner hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                <span class="btn-label">Wyślij zapytanie</span>
+                <svg class="btn-arrow w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </button>
+              <p id="form-status" class="text-sm hidden" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 12. STOPKA ========== -->
+  <footer class="bg-navy-950 text-steel-400 py-16" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="md:col-span-1">
+          <p class="font-display text-white font-bold text-xl">Autoryzowany partner Pattyn</p>
+          <p class="mt-3 text-sm leading-relaxed max-w-xs">Dostarczamy, instalujemy, uruchamiamy i serwisujemy linie pakujące Pattyn</p>
+        </div>
+        <div class="text-sm space-y-3">
+          <p class="font-display font-semibold text-white uppercase tracking-wider text-xs">Kontakt</p>
+          <p>Tel.: <a href="tel:+48223517191" class="text-steel-300 hover:text-white transition-colors">22 351 71 91</a></p>
+          <!-- TODO: e-mail – podmień href -->
+          <p>E-mail: <a href="mailto:biuro@spolex.com" class="text-steel-300 hover:text-white transition-colors">biuro@spolex.com</a></p>
+          <p>
+            <a href="https://spolex.com/pl/" class="inline-flex items-center gap-1.5 text-steel-300 hover:text-white transition-colors link-arrow">
+              www.spolex.com
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+          </p>
+        </div>
+        <div class="text-sm space-y-3">
+          <p class="font-display font-semibold text-white uppercase tracking-wider text-xs">Adres</p>
+          <p class="text-steel-300 leading-relaxed">Spolex Sp. z o.o.<br>ul. Rzemieślnicza 13<br>05-082 Blizne Łaszczyńskiego, Polska</p>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-steel-800 flex flex-col sm:flex-row sm:justify-between gap-4 text-xs text-steel-500">
+        <p>© <span id="year"></span> Autoryzowany partner Pattyn w Polsce. Wszelkie prawa zastrzeżone.</p>
+        <p>Maszyny Pattyn – Pattyn Packing Lines.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="to-top" class="to-top fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-navy-900 text-white shadow-lg ring-1 ring-white/10 hover:bg-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-colors" aria-label="Wróć na górę strony">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Hero – wejście ze staggerem + parallax wizualu
+      var heroSection = document.getElementById('hero');
+      var heroVisual = document.getElementById('hero-visual');
+      var heroVisualMedia = heroSection ? heroSection.querySelector('.hero-visual-media') : null;
+      if (heroSection) {
+        if (prefersReduced) {
+          heroSection.classList.add('hero-ready');
+        } else {
+          requestAnimationFrame(function () {
+            heroSection.classList.add('hero-ready');
+          });
+        }
+      }
+      var heroGridBg = document.getElementById('hero-grid-bg');
+      var heroGlowBg = document.getElementById('hero-glow-bg');
+      var heroMouseX = 0, heroMouseY = 0;
+      var heroParallaxTicking = false;
+      function updateHeroParallax() {
+        heroParallaxTicking = false;
+        if (!heroSection || prefersReduced) return;
+        var rect = heroSection.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        var progress = Math.min(1, Math.max(0, 1 - rect.top / window.innerHeight));
+        var scrollY = progress * 10;
+        var mx = heroMouseX * 14;
+        var my = heroMouseY * 10;
+        if (heroVisualMedia) {
+          heroVisualMedia.style.transform = 'translate(' + (mx * 0.35) + 'px, ' + (scrollY + my * 0.25) + 'px)';
+        }
+        if (heroGridBg) {
+          heroGridBg.style.transform = 'translate(' + mx + 'px, ' + (scrollY * 0.6 + my) + 'px)';
+        }
+        if (heroGlowBg) {
+          heroGlowBg.style.transform = 'translate(' + (mx * 1.2) + 'px, ' + (scrollY * 0.8 + my * 0.8) + 'px)';
+        }
+      }
+      function scheduleHeroParallax() {
+        if (!heroParallaxTicking && !prefersReduced) {
+          heroParallaxTicking = true;
+          requestAnimationFrame(updateHeroParallax);
+        }
+      }
+      if (heroSection && !prefersReduced) {
+        heroSection.addEventListener('mousemove', function (e) {
+          var r = heroSection.getBoundingClientRect();
+          heroMouseX = (e.clientX - r.left) / r.width - 0.5;
+          heroMouseY = (e.clientY - r.top) / r.height - 0.5;
+          scheduleHeroParallax();
+        }, { passive: true });
+      }
+      window.addEventListener('scroll', scheduleHeroParallax, { passive: true });
+
+      // TODO: opcjonalne wideo hero – assets/hero-wykladarka.mp4 (podepnij w #hero-machine-video)
+
+      // Sticky header, pasek postępu, przycisk „do góry” – jeden handler scrolla
+      var header = document.getElementById('site-header');
+      var progress = document.getElementById('scroll-progress');
+      var toTop = document.getElementById('to-top');
+      var ticking = false;
+      function onScroll() {
+        var y = window.scrollY || window.pageYOffset;
+        header.classList.toggle('header-scrolled', y > 8);
+        header.classList.toggle('header-compact', y > 48);
+        var docH = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+        progress.style.width = pct + '%';
+        progress.setAttribute('aria-valuenow', String(Math.round(pct)));
+        toTop.classList.toggle('is-visible', y > 600);
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+      onScroll();
+
+      // Przycisk „do góry”
+      toTop.addEventListener('click', function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      });
+
+      // Scrollspy – podświetlanie aktywnej sekcji w nawigacji
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link, .mobile-nav-link'));
+      var sections = navLinks
+        .map(function (l) { return document.querySelector(l.getAttribute('href')); })
+        .filter(function (s, i, arr) { return s && arr.indexOf(s) === i; });
+      if ('IntersectionObserver' in window && sections.length) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var id = '#' + entry.target.id;
+              navLinks.forEach(function (l) {
+                l.classList.toggle('is-active', l.getAttribute('href') === id);
+              });
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        sections.forEach(function (s) { spy.observe(s); });
+      }
+
+      // Menu mobilne
+      var menuToggle = document.getElementById('menu-toggle');
+      var mobileMenu = document.getElementById('mobile-menu');
+      function setMenu(open) {
+        mobileMenu.classList.toggle('is-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      }
+      menuToggle.addEventListener('click', function () {
+        setMenu(!mobileMenu.classList.contains('is-open'));
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', function () { setMenu(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) { setMenu(false); menuToggle.focus(); }
+      });
+
+      // Smooth scroll – offset pod fixed header
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var id = this.getAttribute('href');
+          if (!id || id === '#') return;
+          var target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          var offset = header.offsetHeight + 12;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          history.pushState(null, '', id);
+        });
+      });
+
+      // IntersectionObserver – animacje on-scroll (sekcje poza hero)
+      if (!prefersReduced) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      // Kroki procesu – cykl podświetlenia 1→2→3 w sekcji „Jak działa”
+      var processStepsList = document.getElementById('process-steps');
+      var jakDzialaSection = document.getElementById('jak-dziala');
+      if (processStepsList && jakDzialaSection) {
+        var processSteps = Array.prototype.slice.call(processStepsList.querySelectorAll('.process-step'));
+        var activeStepIndex = 0;
+        var stepTimer = null;
+        var stepCycleRunning = false;
+        var sectionInView = false;
+        var STEP_HOLD_MS = 2800;
+
+        function highlightProcessStep(idx) {
+          processSteps.forEach(function (step, i) {
+            step.classList.toggle('is-active', i === idx);
+          });
+        }
+
+        function advanceProcessStep() {
+          activeStepIndex = (activeStepIndex + 1) % processSteps.length;
+          highlightProcessStep(activeStepIndex);
+        }
+
+        function startProcessStepCycle() {
+          if (prefersReduced || stepCycleRunning || !sectionInView) return;
+          stepCycleRunning = true;
+          highlightProcessStep(activeStepIndex);
+          stepTimer = window.setInterval(advanceProcessStep, STEP_HOLD_MS);
+        }
+
+        function stopProcessStepCycle() {
+          stepCycleRunning = false;
+          if (stepTimer) {
+            window.clearInterval(stepTimer);
+            stepTimer = null;
+          }
+        }
+
+        if (prefersReduced) {
+          highlightProcessStep(0);
+        } else {
+          processStepsList.classList.add('is-paused');
+
+          processStepsList.addEventListener('mouseenter', function () {
+            stopProcessStepCycle();
+          });
+          processStepsList.addEventListener('mouseleave', function () {
+            startProcessStepCycle();
+          });
+
+          processSteps.forEach(function (step, i) {
+            step.addEventListener('click', function () {
+              stopProcessStepCycle();
+              activeStepIndex = i;
+              highlightProcessStep(activeStepIndex);
+            });
+          });
+
+          if ('IntersectionObserver' in window) {
+            var processStepObs = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                sectionInView = entry.isIntersecting;
+                if (sectionInView) {
+                  startProcessStepCycle();
+                } else {
+                  stopProcessStepCycle();
+                }
+              });
+            }, { threshold: 0.3 });
+            processStepObs.observe(jakDzialaSection);
+          } else {
+            sectionInView = true;
+            startProcessStepCycle();
+          }
+        }
+      }
+
+      // Tabela porównania – stagger wierszy + podświetlenie kolumny MTM
+      var compareSection = document.getElementById('porownanie');
+      if (compareSection && 'IntersectionObserver' in window) {
+        var compareObs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            compareSection.classList.add('compare-ready');
+            if (!prefersReduced) {
+              window.setTimeout(function () {
+                compareSection.classList.add('compare-highlight');
+              }, 420);
+            }
+            compareObs.unobserve(entry.target);
+          });
+        }, { threshold: 0.2 });
+        compareObs.observe(compareSection);
+      } else if (compareSection) {
+        compareSection.classList.add('compare-ready');
+      }
+      if (prefersReduced && compareSection) {
+        compareSection.classList.add('compare-ready');
+      }
+
+      // Liczniki count-up w pasku statystyk
+      var counters = Array.prototype.slice.call(document.querySelectorAll('.counter'));
+      function renderCounter(el, value) {
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = prefix + value.toLocaleString('pl-PL') + suffix;
+      }
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-to'), 10) || 0;
+        var duration = 1500, start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var p = Math.min(1, (ts - start) / duration);
+          var eased = 1 - Math.pow(1 - p, 3);
+          renderCounter(el, Math.round(eased * target));
+          if (p < 1) { window.requestAnimationFrame(step); } else {
+            renderCounter(el, target);
+            if (!prefersReduced) {
+              el.classList.add('is-done');
+              window.setTimeout(function () { el.classList.remove('is-done'); }, 600);
+            }
+          }
+        }
+        window.requestAnimationFrame(step);
+      }
+      if (counters.length) {
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+          counters.forEach(function (el) { renderCounter(el, parseInt(el.getAttribute('data-to'), 10) || 0); });
+        } else {
+          var counterObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) { animateCounter(entry.target); counterObs.unobserve(entry.target); }
+            });
+          }, { threshold: 0.4 });
+          counters.forEach(function (el) { counterObs.observe(el); });
+        }
+      }
+
+      // Lazy-load wideo (iframe z data-embed-src)
+      var videoObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var wrap = entry.target;
+          var src = wrap.getAttribute('data-embed-src');
+          var title = wrap.getAttribute('data-title') || 'Film pokazowy Pattyn';
+          if (src && !wrap.querySelector('iframe')) {
+            var iframe = document.createElement('iframe');
+            iframe.src = src;
+            iframe.title = title;
+            iframe.className = 'w-full h-full absolute inset-0';
+            iframe.setAttribute('loading', 'lazy');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            wrap.classList.add('relative');
+            wrap.innerHTML = '';
+            wrap.appendChild(iframe);
+          }
+          videoObserver.unobserve(wrap);
+        });
+      }, { rootMargin: '200px' });
+      document.querySelectorAll('.lazy-video').forEach(function (el) { videoObserver.observe(el); });
+
+      // Scroll do kontaktu z prefill pola „produkt”
+      var produktField = document.getElementById('produkt');
+      function scrollToKontaktWithPrefill(note) {
+        if (produktField && note) {
+          var existing = produktField.value.trim();
+          produktField.value = existing ? existing + '\n\n' + note : note;
+        }
+        var kontakt = document.getElementById('kontakt');
+        if (!kontakt) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var offset = header.offsetHeight + 12;
+        var top = kontakt.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+        history.pushState(null, '', '#kontakt');
+        window.setTimeout(function () { if (produktField) produktField.focus(); }, reduce ? 0 : 450);
+      }
+      document.querySelectorAll('[data-prefill-kontakt]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          scrollToKontaktWithPrefill(btn.getAttribute('data-prefill-kontakt') || '');
+        });
+      });
+
+      // Schemat linii – desktop (tabs) + mobile (akordeon)
+      var lineTabs = document.querySelectorAll('.line-step-btn[data-line-step]');
+      var lineContents = document.querySelectorAll('.line-panel-content[data-line-content]');
+      function activateLineStep(idx) {
+        lineTabs.forEach(function (tab) {
+          var on = parseInt(tab.getAttribute('data-line-step'), 10) === idx;
+          tab.setAttribute('aria-selected', String(on));
+        });
+        lineContents.forEach(function (panel) {
+          var on = parseInt(panel.getAttribute('data-line-content'), 10) === idx;
+          panel.classList.toggle('hidden', !on);
+        });
+        var activeTab = document.getElementById('line-tab-' + idx);
+        var linePanel = document.getElementById('line-panel');
+        if (activeTab && linePanel) linePanel.setAttribute('aria-labelledby', activeTab.id);
+      }
+      lineTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { activateLineStep(parseInt(tab.getAttribute('data-line-step'), 10)); });
+        tab.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateLineStep(parseInt(tab.getAttribute('data-line-step'), 10)); }
+        });
+      });
+
+      document.querySelectorAll('.line-accordion-trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () { toggleLineAccordion(btn); });
+        btn.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLineAccordion(btn); }
+        });
+      });
+      function toggleLineAccordion(btn) {
+        var panelId = btn.getAttribute('aria-controls');
+        var panel = document.getElementById(panelId);
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.line-accordion-trigger').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var p = document.getElementById(b.getAttribute('aria-controls'));
+          if (p) { p.classList.remove('is-open'); p.hidden = true; }
+        });
+        if (!open && panel) {
+          btn.setAttribute('aria-expanded', 'true');
+          panel.classList.add('is-open');
+          panel.hidden = false;
+        }
+      }
+
+      // Formularz – walidacja inline + stany wysyłki (placeholder, bez backendu)
+      var form = document.getElementById('lead-form');
+      var status = document.getElementById('form-status');
+      var submitBtn = document.getElementById('submit-btn');
+      var requiredFields = ['imie', 'firma', 'email', 'produkt'];
+
+      function errorFor(id) { return document.getElementById('err-' + id); }
+      function validateField(field) {
+        var err = errorFor(field.id);
+        var valid = field.checkValidity();
+        if (err) err.classList.toggle('is-shown', !valid);
+        field.setAttribute('aria-invalid', String(!valid));
+        return valid;
+      }
+      function clearField(field) {
+        if (field.getAttribute('aria-invalid') === 'true' && field.checkValidity()) {
+          field.setAttribute('aria-invalid', 'false');
+          var err = errorFor(field.id);
+          if (err) err.classList.remove('is-shown');
+        }
+      }
+      requiredFields.forEach(function (id) {
+        var field = document.getElementById(id);
+        if (!field) return;
+        field.addEventListener('blur', function () { validateField(field); });
+        field.addEventListener('input', function () { clearField(field); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var firstInvalid = null;
+        requiredFields.forEach(function (id) {
+          var field = document.getElementById(id);
+          if (field && !validateField(field) && !firstInvalid) firstInvalid = field;
+        });
+        if (firstInvalid) {
+          firstInvalid.focus();
+          status.textContent = 'Uzupełnij zaznaczone pola, aby wysłać zapytanie.';
+          status.className = 'text-sm font-medium text-red-600 mt-2 block';
+          status.classList.remove('hidden');
+          return;
+        }
+
+        // Stan ładowania
+        var spinner = submitBtn.querySelector('.btn-spinner');
+        var label = submitBtn.querySelector('.btn-label');
+        var arrow = submitBtn.querySelector('.btn-arrow');
+        submitBtn.disabled = true;
+        spinner.classList.remove('hidden');
+        arrow.classList.add('hidden');
+        label.textContent = 'Wysyłanie…';
+        status.classList.add('hidden');
+
+        // TODO: fetch(form.action, { method: 'POST', body: new FormData(form) })
+        // Symulacja odpowiedzi – podmień na realny endpoint
+        window.setTimeout(function () {
+          spinner.classList.add('hidden');
+          arrow.classList.remove('hidden');
+          label.textContent = 'Wyślij zapytanie';
+          submitBtn.disabled = false;
+          status.textContent = 'Dziękujemy — wiadomość dotarła (formularz demo: podłącz backend w polu action).';
+          status.className = 'text-sm font-medium text-green-600 mt-2 block';
+          status.classList.remove('hidden');
+          form.reset();
+        }, 900);
+      });
+    })();
+  </script>
+</body>
+</html>
