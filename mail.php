@@ -1,0 +1,86 @@
+<?php
+/**
+ * Obsługa formularza kontaktowego – wykładarka.pl
+ * Wgraj ten plik obok index.html na hosting z PHP.
+ */
+
+header('Content-Type: application/json; charset=utf-8');
+
+// --- Konfiguracja (ewentualnie zmień przed wdrożeniem) ---
+const MAIL_TO   = 'biuro@spolex.com';
+const MAIL_FROM = 'noreply@wykladarka.pl'; // adres na tej samej domenie co strona
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['ok' => false, 'message' => 'Niedozwolona metoda żądania.']);
+    exit;
+}
+
+// Honeypot – ukryte pole; boty je wypełniają, ludzie nie
+if (!empty($_POST['website'])) {
+    echo json_encode(['ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.']);
+    exit;
+}
+
+function field(string $key): string {
+    return trim(strip_tags($_POST[$key] ?? ''));
+}
+
+$imie    = field('imie');
+$firma   = field('firma');
+$email   = field('email');
+$telefon = field('telefon');
+$produkt = field('produkt');
+
+$errors = [];
+
+if ($imie === '') {
+    $errors[] = 'Podaj imię i nazwisko.';
+}
+if ($firma === '') {
+    $errors[] = 'Podaj nazwę firmy.';
+}
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Podaj poprawny adres e-mail.';
+}
+if ($produkt === '') {
+    $errors[] = 'Opisz produkt do pakowania.';
+}
+
+if ($errors) {
+    http_response_code(422);
+    echo json_encode(['ok' => false, 'message' => implode(' ', $errors)]);
+    exit;
+}
+
+$subject = 'Zapytanie z wykładarka.pl – ' . $firma;
+
+$body  = "Nowe zapytanie ze strony wykładarka.pl\r\n\r\n";
+$body .= "Imię i nazwisko: {$imie}\r\n";
+$body .= "Firma: {$firma}\r\n";
+$body .= "E-mail: {$email}\r\n";
+$body .= "Telefon: " . ($telefon !== '' ? $telefon : '—') . "\r\n\r\n";
+$body .= "Opis produktu:\r\n{$produkt}\r\n\r\n";
+$body .= "---\r\n";
+$body .= 'Data: ' . date('Y-m-d H:i:s') . "\r\n";
+$body .= 'IP: ' . ($_SERVER['REMOTE_ADDR'] ?? 'nieznane') . "\r\n";
+
+$encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+
+$headers  = "From: " . MAIL_FROM . "\r\n";
+$headers .= "Reply-To: {$email}\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion();
+
+$sent = @mail(MAIL_TO, $encodedSubject, $body, $headers);
+
+if ($sent) {
+    echo json_encode(['ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.']);
+} else {
+    http_response_code(500);
+    echo json_encode([
+        'ok'      => false,
+        'message' => 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń: 22 351 71 91.',
+    ]);
+}
