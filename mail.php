@@ -1,29 +1,38 @@
 <?php
 /**
  * Obsługa formularza kontaktowego – wykładarka.pl
- * Wgraj ten plik obok index.html na hosting z PHP.
+ * Test: wejdź w przeglądarce na https://twoja-domena.pl/mail.php
  */
 
 header('Content-Type: application/json; charset=utf-8');
 
-// --- Konfiguracja (ewentualnie zmień przed wdrożeniem) ---
-const MAIL_TO   = 'biuro@spolex.com';
-const MAIL_FROM = 'noreply@wykladarka.pl'; // adres na tej samej domenie co strona
+// --- Konfiguracja ---
+define('MAIL_TO', 'biuro@spolex.com');
+define('MAIL_FROM', 'biuro@spolex.com'); // użyj istniejącej skrzynki Spolex
+
+// Szybki test: otwórz mail.php w przeglądarce – powinien zwrócić JSON
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo json_encode(array(
+        'ok'      => true,
+        'message' => 'mail.php działa. PHP ' . phpversion(),
+    ));
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['ok' => false, 'message' => 'Niedozwolona metoda żądania.']);
+    echo json_encode(array('ok' => false, 'message' => 'Niedozwolona metoda żądania.'));
     exit;
 }
 
-// Honeypot – ukryte pole; boty je wypełniają, ludzie nie
+// Honeypot
 if (!empty($_POST['website'])) {
-    echo json_encode(['ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.']);
+    echo json_encode(array('ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.'));
     exit;
 }
 
-function field(string $key): string {
-    return trim(strip_tags($_POST[$key] ?? ''));
+function field($key) {
+    return isset($_POST[$key]) ? trim(strip_tags($_POST[$key])) : '';
 }
 
 $imie    = field('imie');
@@ -32,7 +41,7 @@ $email   = field('email');
 $telefon = field('telefon');
 $produkt = field('produkt');
 
-$errors = [];
+$errors = array();
 
 if ($imie === '') {
     $errors[] = 'Podaj imię i nazwisko.';
@@ -49,7 +58,7 @@ if ($produkt === '') {
 
 if ($errors) {
     http_response_code(422);
-    echo json_encode(['ok' => false, 'message' => implode(' ', $errors)]);
+    echo json_encode(array('ok' => false, 'message' => implode(' ', $errors)));
     exit;
 }
 
@@ -63,24 +72,23 @@ $body .= "Telefon: " . ($telefon !== '' ? $telefon : '—') . "\r\n\r\n";
 $body .= "Opis produktu:\r\n{$produkt}\r\n\r\n";
 $body .= "---\r\n";
 $body .= 'Data: ' . date('Y-m-d H:i:s') . "\r\n";
-$body .= 'IP: ' . ($_SERVER['REMOTE_ADDR'] ?? 'nieznane') . "\r\n";
+$body .= 'IP: ' . (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'nieznane') . "\r\n";
 
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-$headers  = "From: " . MAIL_FROM . "\r\n";
-$headers .= "Reply-To: {$email}\r\n";
+$headers  = 'From: ' . MAIL_FROM . "\r\n";
+$headers .= 'Reply-To: ' . $email . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
 
 $sent = @mail(MAIL_TO, $encodedSubject, $body, $headers);
 
 if ($sent) {
-    echo json_encode(['ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.']);
+    echo json_encode(array('ok' => true, 'message' => 'Dziękujemy — odezwiemy się wkrótce.'));
 } else {
     http_response_code(500);
-    echo json_encode([
+    echo json_encode(array(
         'ok'      => false,
-        'message' => 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń: 22 351 71 91.',
-    ]);
+        'message' => 'Serwer nie wysłał maila. Zadzwoń: 22 351 71 91 lub napisz na biuro@spolex.com.',
+    ));
 }

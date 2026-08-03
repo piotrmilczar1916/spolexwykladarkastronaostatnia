@@ -1493,8 +1493,10 @@
           headers: { 'Accept': 'application/json' }
         })
           .then(function (res) {
-            return res.json().then(function (data) {
-              return { ok: res.ok, data: data };
+            return res.text().then(function (text) {
+              var data = null;
+              try { data = JSON.parse(text); } catch (e) { data = null; }
+              return { ok: res.ok, status: res.status, data: data };
             });
           })
           .then(function (result) {
@@ -1502,23 +1504,29 @@
             arrow.classList.remove('hidden');
             label.textContent = 'Wyślij zapytanie';
             submitBtn.disabled = false;
-            if (result.data.ok) {
+            if (result.data && result.data.ok) {
               status.textContent = result.data.message;
               status.className = 'text-sm font-medium text-green-600 mt-2 block';
               status.classList.remove('hidden');
               form.reset();
-            } else {
-              status.textContent = result.data.message || 'Wystąpił błąd. Spróbuj ponownie.';
-              status.className = 'text-sm font-medium text-red-600 mt-2 block';
-              status.classList.remove('hidden');
+              return;
             }
+            if (result.data && result.data.message) {
+              status.textContent = result.data.message;
+            } else if (result.status === 404) {
+              status.textContent = 'Brak pliku mail.php na serwerze. Wgraj mail.php obok index.html.';
+            } else {
+              status.textContent = 'Błąd serwera (HTTP ' + result.status + '). Sprawdź, czy hosting obsługuje PHP.';
+            }
+            status.className = 'text-sm font-medium text-red-600 mt-2 block';
+            status.classList.remove('hidden');
           })
           .catch(function () {
             spinner.classList.add('hidden');
             arrow.classList.remove('hidden');
             label.textContent = 'Wyślij zapytanie';
             submitBtn.disabled = false;
-            status.textContent = 'Nie udało się wysłać wiadomości. Sprawdź połączenie lub zadzwoń: 22 351 71 91.';
+            status.textContent = 'Brak połączenia z serwerem. Formularz wymaga hostingu z PHP (mail.php).';
             status.className = 'text-sm font-medium text-red-600 mt-2 block';
             status.classList.remove('hidden');
           });
